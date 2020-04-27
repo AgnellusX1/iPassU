@@ -1,6 +1,5 @@
-# RedTools
-A Set of PenTest Tools
+# iPassU
+A Hash Based Password Cracker
 
-**Modules**
-1. Keylogger (Local)
- 2. Password Hash Cracker (MD5)
+**Algorithms**
+1. MD5
