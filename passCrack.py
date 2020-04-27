@@ -29,7 +29,7 @@ def fun_md5():
             break
 
         if flag == 0:
-            print("Searching...")
+            print("Please wait....Searching...")
     if flag==0:
         print("================================================")
         print("Password not found, try another algo or wordlist")
@@ -58,12 +58,12 @@ def fun_sha256():
             print("Password Found")
             print(word)
             print("=================")
-            print(counter)
+            print("Passwords Checked: "+str(counter))
             flag=1
             break
 
         if flag == 0:
-            print("Searching...")
+            print("Please wait....Searching...")
     if flag==0:
         print("================================================")
         print("Password not found, try another algo or wordlist")
@@ -92,12 +92,12 @@ def fun_sha512():
             print("Password Found")
             print(word)
             print("=================")
-            print(counter)
+            print("Passwords Checked: "+str(counter))
             flag=1
             break
 
         if flag == 0:
-            print("Searching...")
+            print("Please wait....Searching...")
     if flag==0:
         print("================================================")
         print("Password not found, try another algo or wordlist")
