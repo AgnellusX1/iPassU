@@ -104,19 +104,27 @@ def fun_sha512():
         print("================================================")
 
 print("=============================")
-print("iPassU")
+print("========||| iPassU |||========")
 print("A Hash Based password Cracker")
 print("=============================")
 pass_hash = input("Enter The hash: ")
+know=input("Do you know the Hashing Algorithm used ??\n\tY\tN\n: ")
 print("=============================")
 word_list = input("Enter the name of the wordlist: ")
 print("=============================")
-print("Algorithm ()")
-choice=int(input("[1]:MD5\n[2]:SHA256\n[3]:SHA512\nEnter Your Choice:"))
-print("=============================")
-if choice==1:
+if know =='Y'or know =='y':
+    print("Select the Algotithm used : ")
+    choice=int(input("[1]:MD5\n[2]:SHA256\n[3]:SHA512\nEnter Your Choice:"))
+    print("=============================")
+    if choice==1:
+        fun_md5()
+    if choice==2:
+        fun_sha256()
+    if choice==3:
+        fun_sha512()
+else:
+    print("=============================")
+    print("Trying all avaliable algorithms: Please wait..")
     fun_md5()
-if choice==2:
     fun_sha256()
-if choice==3:
     fun_sha512()
