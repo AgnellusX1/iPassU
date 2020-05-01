@@ -81,7 +81,7 @@ def fun_sha224():
 
     flag=0
     counter=0
-    print("Running SHA-224")
+    print("Running SHA2-224")
     print("=================")
     Lines=pass_file.readlines()
     for word in Lines:
@@ -115,7 +115,7 @@ def fun_sha256():
 
     flag=0
     counter=0
-    print("Running SHA-256")
+    print("Running SHA2-256")
     print("=================")
     Lines=pass_file.readlines()
     for word in Lines:
@@ -149,7 +149,7 @@ def fun_sha384():
 
     flag=0
     counter=0
-    print("Running SHA-384")
+    print("Running SHA2-384")
     print("=================")
     Lines=pass_file.readlines()
     for word in Lines:
@@ -183,7 +183,7 @@ def fun_sha512():
 
     flag=0
     counter=0
-    print("Running SHA-512")
+    print("Running SHA2-512")
     print("=================")
     Lines=pass_file.readlines()
     for word in Lines:
@@ -220,14 +220,31 @@ word_list = input("Enter the name of the wordlist: ")
 print("=============================")
 if know =='Y'or know =='y':
     print("Select the Algotithm used : ")
-    choice=int(input("[1]:MD5\n[2]:SHA256\n[3]:SHA512\nEnter Your Choice:"))
+    choice=int(input("[0]: MD5\n[1]: SHA-1\n[2]: SHA-2\nEnter Your Choice: "))
     print("=============================")
-    if choice==1:
+    if choice==0:
         fun_md5()
-    if choice==2:
-        fun_sha256()
-    if choice==3:
-        fun_sha512()
+    elif choice==1:
+        fun_sha1()
+    elif choice==2:
+        ch_sha2=int(input("[1]: SHA2-224\n[2]: SHA2-256\n[3]: SHA2-384\n[4]: SHA2-512\nEnter Your Choice: "))
+        if ch_sha2==1:
+            fun_sha224()
+        elif ch_sha2==2:
+            fun_sha256()
+        elif ch_sha2==3:
+            fun_sha384()
+        elif ch_sha2==4:
+            fun_sha512()
+        else:
+            print("=============================")
+            print("Enter a Valid Choice!!")
+            print("=============================")
+    else:
+        print("=============================")
+        print("Enter a Valid Choice!!")
+        print("=============================")
+        
 else:
     print("=============================")
     print("Trying all avaliable algorithms: Please wait..")
