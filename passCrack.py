@@ -408,6 +408,7 @@ else:
     flag=0
     counter=0
     print("=================")
+    print("Please wait.. This will take some time")
     Lines=pass_file.readlines()
     for word in Lines:
         enc_word=word.encode('utf-8')
@@ -435,9 +436,6 @@ else:
             print("Passwords Checked: "+str(counter))
             flag=1
             break
-
-        if flag == 0:
-            print("Please wait....Searching...")
     if flag==0:
         print("================================================")
         print("Password not found, try another algo or wordlist")
