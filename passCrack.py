@@ -400,15 +400,45 @@ if know =='Y'or know =='y':
 else:
     print("=============================")
     print("Trying all avaliable algorithms: Please wait..")
-    fun_md5()
-    fun_sha1()
-    
-    fun_sha224()
-    fun_sha384()
-    fun_sha256()
-    fun_sha512()
+    try:
+        pass_file = open(word_list,"r")
+    except:
+        print("File Not Found")
+        quit()
+    flag=0
+    counter=0
+    print("=================")
+    Lines=pass_file.readlines()
+    for word in Lines:
+        enc_word=word.encode('utf-8')
+        # MD5
+        digest_md5=hashlib.md5(enc_word.strip()).hexdigest()
+        # SHA1
+        digest_SHA1=hashlib.sha1(enc_word.strip()).hexdigest()
+        # SHA2
+        digest_SHA2_224=hashlib.sha224(enc_word.strip()).hexdigest()
+        digest_SHA2_256=hashlib.sha256(enc_word.strip()).hexdigest()
+        digest_SHA2_384=hashlib.sha384(enc_word.strip()).hexdigest()
+        digest_SHA2_512=hashlib.sha512(enc_word.strip()).hexdigest()
+        # SHA3
+        digest_SHA3_224=hashlib.sha3_224(enc_word.strip()).hexdigest()
+        digest_SHA3_256=hashlib.sha3_256(enc_word.strip()).hexdigest()
+        digest_SHA3_384=hashlib.sha3_384(enc_word.strip()).hexdigest()
+        digest_SHA3_512=hashlib.sha3_512(enc_word.strip()).hexdigest()
 
-    fun_sha3_224()
-    fun_sha3_256()
-    fun_sha3_384()
-    fun_sha3_512()
+        counter+=1
+        if digest_md5 == pass_hash or digest_SHA1==pass_hash or digest_SHA2_224==pass_hash or digest_SHA2_256==pass_hash or digest_SHA2_384==pass_hash or digest_SHA2_512==pass_hash or digest_SHA3_224== pass_hash or digest_SHA3_256== pass_hash or digest_SHA3_384==pass_hash or digest_SHA3_512==pass_hash:
+            print("=================")
+            print("Password Found")
+            print(word)
+            print("=================")
+            print("Passwords Checked: "+str(counter))
+            flag=1
+            break
+
+        if flag == 0:
+            print("Please wait....Searching...")
+    if flag==0:
+        print("================================================")
+        print("Password not found, try another algo or wordlist")
+        print("================================================")
