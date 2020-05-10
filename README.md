@@ -4,6 +4,7 @@
 A Hash-Based Password Cracker tool. Works on any word list.
 Supports most of the commonly used hashing algorithms to store passwords
 No dependencies needed, just python
+
 **FEATURES**
  - Efficient
  - Easy-to-Use
@@ -25,7 +26,7 @@ No dependencies needed, just python
 	- SHA3-348
 	- SHA3-512
 
-**Developers**
+**Developer**
  - [Agnellus Fernandes ](https://www.linkedin.com/in/agnellus-fernandes-81232b192)
 ## Screenshots
 
